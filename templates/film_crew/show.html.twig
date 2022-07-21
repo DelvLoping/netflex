@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FilmCrew{% endblock %}
+
+{% block body %}
+    <h1>FilmCrew</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ film_crew.id }}</td>
+            </tr>
+            <tr>
+                <th>Contributeur</th>
+                <td>{{ film_crew.idContributor }}</td>
+            </tr>
+            <tr>
+                <th>Film</th>
+                <td>{{ film_crew.idMovie }}</td>
+            </tr>
+            <tr>
+                <th>Métier</th>
+                <td>{{ film_crew.idJob }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_film_crew_index') }}">back to list</a>
+
+    <a href="{{ path('app_film_crew_edit', {'id': film_crew.id}) }}">edit</a>
+
+    {{ include('film_crew/_delete_form.html.twig') }}
+{% endblock %}

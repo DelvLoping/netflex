@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Categorize{% endblock %}
+
+{% block body %}
+    <h1>Edit Categorize</h1>
+
+    {{ include('categorize/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_categorize_index') }}">back to list</a>
+
+    {{ include('categorize/_delete_form.html.twig') }}
+{% endblock %}

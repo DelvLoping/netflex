@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Seen index{% endblock %}
+
+{% block body %}
+    <h1>Seen index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Utilisateurs</th>
+                <th>Film</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for seen in seens %}
+            <tr>
+                <td>{{ seen.id }}</td>
+                <td>{{ seen.idUsers }}</td>
+                <td>{{ seen.idMovie }}</td>
+                <td>
+                    <a href="{{ path('app_seen_show', {'id': seen.id}) }}">show</a>
+                    <a href="{{ path('app_seen_edit', {'id': seen.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_seen_new') }}">Create new</a>
+{% endblock %}

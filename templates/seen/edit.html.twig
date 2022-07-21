@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Seen{% endblock %}
+
+{% block body %}
+    <h1>Edit Seen</h1>
+
+    {{ include('seen/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_seen_index') }}">back to list</a>
+
+    {{ include('seen/_delete_form.html.twig') }}
+{% endblock %}

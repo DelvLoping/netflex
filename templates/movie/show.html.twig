@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Movie{% endblock %}
+
+{% block body %}
+<a style="position: absolute; opacity:0.6; color:#bbb" href='#' onclick="history.back()"><i class="fa fa-arrow-left fa-2x"></i></a>
+
+<div class="containerMovie">
+<div class="movie-info" style="background-image :url('{{movie.img}}')">
+
+    <div class="movie-detail">
+
+        <h1 class="movie-name">{{ movie.title }}</h1>
+    
+        <div class="row movie-div">
+        <a class="btn btn-lg btn-danger trailer" style="widht:10vw" href={{movie.trailer}}> Voir le trailer</a>
+        <a class="btn btn-lg btn-dark inactiveLink" style="widht:10vw" href="#">{{rate}}/5</a>
+        </div>
+       
+        <p class="genres">{% if movie.categorize|length > 0 %}{% for cate in movie.categorize %}{{ cate.idGenre.name }} {% endfor %} {% endif %}</p>
+        <p class="date">{{ movie.dateRelease ? movie.dateRelease|date('Y') : '' }}</p>
+        <p class="des">{{ movie.resume }}</p>
+        <p class="starring"><span></span></p>
+    </div>
+</div>
+</div>
+{% endblock %}

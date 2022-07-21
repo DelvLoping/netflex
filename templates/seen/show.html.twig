@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Seen{% endblock %}
+
+{% block body %}
+    <h1>Seen</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ seen.id }}</td>
+            </tr>
+            <tr>
+                <th>Utilisateurs</th>
+                <td>{{ seen.idUsers }}</td>
+            </tr>
+            <tr>
+                <th>Film</th>
+                <td>{{ seen.idMovie }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_seen_index') }}">back to list</a>
+
+    <a href="{{ path('app_seen_edit', {'id': seen.id}) }}">edit</a>
+
+    {{ include('seen/_delete_form.html.twig') }}
+{% endblock %}

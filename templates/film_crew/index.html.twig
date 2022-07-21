@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FilmCrew index{% endblock %}
+
+{% block body %}
+    <h1>FilmCrew index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Contributeur</th>
+                <th>Film</th>
+                <th>Métier</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for film_crew in film_crews %}
+            <tr>
+                <td>{{ film_crew.id }}</td>
+                <td>{{ film_crew.idContributor }}</td>
+                <td>{{ film_crew.idMovie }}</td>
+                <td>{{ film_crew.idJob }}</td>
+                <td>
+                    <a href="{{ path('app_film_crew_show', {'id': film_crew.id}) }}">show</a>
+                    <a href="{{ path('app_film_crew_edit', {'id': film_crew.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_film_crew_new') }}">Create new</a>
+{% endblock %}

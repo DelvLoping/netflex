@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit FilmCrew{% endblock %}
+
+{% block body %}
+    <h1>Edit FilmCrew</h1>
+
+    {{ include('film_crew/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_film_crew_index') }}">back to list</a>
+
+    {{ include('film_crew/_delete_form.html.twig') }}
+{% endblock %}

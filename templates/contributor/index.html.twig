@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contributor index{% endblock %}
+
+{% block body %}
+    <h1>Contributor index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contributor in contributors %}
+            <tr>
+                <td>{{ contributor.id }}</td>
+                <td>{{ contributor.name }}</td>
+                <td>
+                    <a href="{{ path('app_contributor_show', {'id': contributor.id}) }}">show</a>
+                    <a href="{{ path('app_contributor_edit', {'id': contributor.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_contributor_new') }}">Create new</a>
+{% endblock %}

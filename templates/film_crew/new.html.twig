@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New FilmCrew{% endblock %}
+
+{% block body %}
+    <h1>Create new FilmCrew</h1>
+
+    {{ include('film_crew/_form.html.twig') }}
+
+    <a href="{{ path('app_film_crew_index') }}">back to list</a>
+{% endblock %}
