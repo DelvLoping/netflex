@@ -29,7 +29,6 @@ class AccueilController extends AbstractController
     {
         $users = $doctrine->getRepository(Favorites::class);
         dd($users);
-        ->find(35)->getIdUsers();
         $genres = $doctrine->getRepository(Genre::class)->findAll();
         // ...
 
