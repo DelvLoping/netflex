@@ -27,7 +27,9 @@ class AccueilController extends AbstractController
      */
     public function index(ManagerRegistry $doctrine):Response
     {
-        $users = $doctrine->getRepository(Favorites::class)->find(35)->getIdUsers();
+        $users = $doctrine->getRepository(Favorites::class);
+        dd($users);
+        ->find(35)->getIdUsers();
         $genres = $doctrine->getRepository(Genre::class)->findAll();
         // ...
 
